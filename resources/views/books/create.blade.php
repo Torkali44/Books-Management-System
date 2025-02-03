@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>You Can Create Book From Here</h1>
-        <form action="{{ route('create') }}" method="post">
+        <form action="/books/store" method="post">
             @csrf
             <fieldset>
                 <label for="title">Title :</label>

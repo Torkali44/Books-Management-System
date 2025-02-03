@@ -11,13 +11,13 @@ class BookController extends Controller
     }
     public function create()
     {
-        return view ('book.create');
+        return view ('books.create');
     }
     public function store(Request $request)
     {
-        $Name=$request->$Name;
-        $Description=$request->$Description;
-        $Price=$request->$Price;
+        $Name=$request->Name;
+        $Description=$request->Description;
+        $Price=$request->Price;
 
         $data = [
             'Name' => $Name,
@@ -26,7 +26,7 @@ class BookController extends Controller
 
         ];
         Book::create($data);
-        return view ("book.success");
+        return view ("books.success");
 
     }
     
