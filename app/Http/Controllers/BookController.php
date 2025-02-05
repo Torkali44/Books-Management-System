@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index()
-    {
-    }
+  
     public function create()
     {
-        return view ('books.create');
+        return view('books.create');
     }
     public function store(Request $request)
     {
@@ -26,8 +24,11 @@ class BookController extends Controller
 
         ];
         Book::create($data);
-        return view ("books.success");
-
-    }
+        return redirect()->route('books.index');    }
     
+    public function index()
+    {
+        $books = Book::all();
+        return view('books.index', compact('books'));
+    }
 }
